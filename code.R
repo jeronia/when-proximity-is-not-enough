@@ -118,7 +118,8 @@ urban_function_means <- urban_function %>%
                                        starts_with("Cycling_infrastructure")), na.rm = TRUE),
     AWT_retail       = rowMeans(select(., starts_with("Supermarket"), starts_with("Market"),
                                        starts_with("Fresh_food_store"), starts_with("Convenience_store"),
-                                       starts_with("Catering_facility"), starts_with("Other_supplies")), na.rm = TRUE)
+                                       starts_with("Catering_facility"), starts_with("Other_supplies")), na.rm = TRUE),
+    AWT = rowMeans(select(., ends_with("time_dest")), na.rm = TRUE)
   ) %>%
   select(id, starts_with("AWT_"))
 
